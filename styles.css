@@ -87,7 +87,19 @@ footer {
 }
 
 .intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3rem;
+  align-items: center;
   padding: 5rem 0 4rem;
+}
+
+.portrait {
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
 }
 
 .label {
@@ -295,7 +307,15 @@ footer p {
   }
 
   .intro {
+    grid-template-columns: 1fr;
+    gap: 2rem;
     padding: 3.5rem 0 3rem;
+  }
+
+  .portrait {
+    order: -1;
+    width: 8rem;
+    height: 8rem;
   }
 
   section:not(.intro) {

@@ -10,7 +10,7 @@
         font-size: 18px; /* Base font size for scaling */
       }
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #000000;
         margin: 0;
         padding: 0;
@@ -24,14 +24,17 @@
         margin: -5px; /* Remove default margins */
       }
       img {
-        width: 245px;
-        height: 245px;
-        border-radius: 50%;
-        object-fit: scale-down;
-        margin-right: 15px;
+        width: 220px;
+        height: 220px;
+        border-radius: 14px;
+        object-fit: cover;
+        border: 3px solid #e3e8ee;
+        margin-right: 20px;
       }
       h1 {
-        font-size: 1.8em;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 2em;
+        color: #1f3a5f;
         margin: 0;
       }
       h1 span {
@@ -42,11 +45,12 @@
         margin: 5px 0;
       }
       h2 {
-        font-size: 1.5em;
-        color: #333333;
-        border-bottom: 2px solid #ddd;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.4em;
+        color: #1f3a5f;
+        border-bottom: 2px solid #c9d4e0;
         padding-bottom: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
       }
       h3 {
         font-size: 1em;
@@ -85,7 +89,10 @@
       .profile {
         display: flex;
         align-items: center;
-        margin-bottom: 0px; /* Space between profile and news */
+        background: #f6f8fa;
+        border-radius: 10px;
+        padding: 25px;
+        margin: 0 15px 15px;
       }
       .abstract {
         display: none; /* Hidden by default */
@@ -95,7 +102,7 @@
         border-left: 4px solid #ccc;
       }
       .abstract-btn {
-        color: #007bff;
+        color: #1f3a5f;
         text-decoration: none;
         cursor: pointer;
       }
@@ -107,7 +114,7 @@
         font-weight: normal;
       }
       .links-group a {
-        color: #007bff; /* Blue color for links */
+        color: #1f3a5f; /* Navy color for links */
         text-decoration: none; /* Remove underline */
       }
       .links-group a:hover {
@@ -119,7 +126,7 @@
       /* Remove underline from all hyperlinks */
       a {
         text-decoration: none;
-        color: #007bff; /* Optional: Set a custom color */
+        color: #1f3a5f; /* Optional: Set a custom color */
       }
       /* Add an underline on hover for better accessibility */
       a:hover {
@@ -128,6 +135,8 @@
       .last-updated {
         text-align: center;
         margin-top: 30px;
+        padding-top: 15px;
+        border-top: 1px solid #e3e8ee;
         font-size: 0.9em;
         color: gray;
       }
@@ -140,7 +149,7 @@
       }
       /* Hover effect: Change color and add an underline */
       .author-link:hover {
-        color: blue; /* Highlight the text in blue on hover */
+        color: #1f3a5f; /* Highlight the text in navy on hover */
         text-decoration: underline; /* Add underline on hover */
       }
       /* Two-column grid for timeline entries */
@@ -279,89 +288,6 @@
           <br />
           <strong><em>International Journal of Economics and Business Research</em></strong
           >, accepted, 2026
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Work-in-Progress</h2>
-
-      <h3>Screening</h3>
-      <ul>
-        <li>
-          Market-Relative Temporal Representations for Cross-Sectional Equity Ranking (with Ha Quoc
-          Hung and Ngo Phu Thanh) — <em>Review of Quantitative Finance and Accounting</em>
-        </li>
-        <li>
-          Period-Aware Analog Retrieval for Financial Risk Forecasting (with Ha Quoc Hung and Ngo
-          Phu Thanh) — <em>Computational Economics</em>
-        </li>
-        <li>
-          World Uncertainty, Cost of Debt, and Firm Financial Stability: Nonlinear and Heterogeneous
-          Evidence (with Ngo Phu Thanh) — <em>Humanities and Social Sciences Communications</em>
-        </li>
-        <li>
-          Best Response Heuristics under Payoff Frictions in Double Auction Quote Selection (with
-          Ngo Phu Thanh and Vo Thanh Hung) — <em>International Journal of Financial Engineering</em>
-        </li>
-        <li>
-          Stability Pool Allocation and Redemption Routing in Liquity V2: Protocol Reconstruction
-          and Bounded Behavioral Evidence (with Nguyen Anh Phong and Ngo Phu Thanh) —
-          <em>International Journal of Information Technology &amp; Decision Making</em>
-        </li>
-        <li>
-          Learning Objectives and Information Value in Cross-Sectional Stock Ranking: Evidence from
-          the Vietnam Stock Market (with Nguyen Anh Phong and Ngo Phu Thanh) —
-          <em>Annals of Data Science</em>
-        </li>
-        <li>
-          High-Frequency Limit-Order Submission Around the 2021 Meta Outage: A Localized Activity
-          Burst Without Broad Directional Coordination (with Ngo Phu Thanh and Xuan Thien Nguyen) —
-          <em>Journal of Open Innovation: Technology, Market, and Complexity</em>
-        </li>
-      </ul>
-
-      <h3>Under Review</h3>
-      <ul>
-        <li>
-          MambaLOB: Efficient and Uncertainty-Aware Limit Order Book Forecasting for Cryptocurrency
-          Markets (with Ha Quoc Hung and Ngo Phu Thanh) —
-          <em>International Journal of Information Management Data Insights</em>
-        </li>
-        <li>
-          State-Dependent Graph Portfolio Optimization using Selective State Space Models and
-          Regime-Adaptive Graph Learning (with Ngo Phu Thanh) —
-          <em>Int. J. of Computational Economics and Econometrics</em>
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_dissertation">Abstract</a>]
-          </span>
-          <div id="abstract_dissertation" class="abstract">
-            <p>
-              This project studies regime-dependent financial networks and their use in portfolio
-              construction. It combines selective state-space models with regime-adaptive graph
-              learning to represent changing cross-asset dependencies and support portfolio
-              decisions during volatility and regime transitions.
-            </p>
-          </div>
-        </li>
-        <li>
-          Double Machine Learning Reveals State Dependent Market Breadth Effects on Equity Returns
-          (with Nguyen Phat Dat and Ngo Phu Thanh) — <em>Discover Sustainability</em>
-        </li>
-        <li>
-          Economic Policy Uncertainty, Corporate Cash Buffers, and Firm Financial Stability: Double
-          Machine Learning Evidence from Southeast Asia (with Ngo Phu Thanh) —
-          <em>Cogent Economics &amp; Finance</em>
-        </li>
-        <li>
-          Policy Uncertainty, Cash Buffers, and Firm Financial Stability: Evidence from Nonlinear
-          and Machine-Learning Approaches (with Ngo Phu Thanh) —
-          <em>Macroeconomics and Finance in Emerging Market Economies</em>
-        </li>
-        <li>
-          World Uncertainty, Cost of Debt, and Corporate Financial Stability: Panel and
-          Machine-Learning Evidence (with Tran Phuoc and Ngo Phu Thanh) —
-          <em>Research in Economics</em>
         </li>
       </ul>
     </section>

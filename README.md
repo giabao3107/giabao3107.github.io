@@ -6,7 +6,7 @@ A simple academic website for graduate applications, based on `CV.tex`.
 
 After enabling GitHub Pages from the `main` branch and `/ (root)`, the site will be available at:
 
-https://giabao3107.github.io/Proposal/
+https://giabao3107.github.io/
 
 ## Files
 

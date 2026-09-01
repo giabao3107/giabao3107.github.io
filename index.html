@@ -4,155 +4,184 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nguyen Luong Gia Bao</title>
+    <meta
+      name="description"
+      content="Nguyen Luong Gia Bao — Undergraduate researcher in Financial Technology at University of Economics and Law, Vietnam National University. Research in empirical finance, financial engineering, and market design."
+    />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <style>
-      html {
-        font-size: 18px; /* Base font size for scaling */
+      :root {
+        --text: #1a1a1a;
+        --muted: #555555;
+        --accent: #1f3a5f;
+        --accent-soft: #eef2f7;
+        --border: #d8dee6;
+        --link: #1f3a5f;
+        --surface: #f7f8fa;
+        --max-width: 1000px;
       }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 72px;
+      }
+
       body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #000000;
+        color: var(--text);
         margin: 0;
         padding: 0;
         background-color: #ffffff;
-        line-height: 1.6;
-        max-width: 1050px;
-        margin: 20px auto;
+        line-height: 1.65;
+        font-size: 17px;
       }
+
+      /* ---------- Navigation ---------- */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid var(--border);
+      }
+      nav .nav-inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0.7rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      nav .nav-name {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.05rem;
+        color: var(--accent);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      nav .nav-links {
+        display: flex;
+        gap: 1.1rem;
+        flex-wrap: wrap;
+      }
+      nav .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.92rem;
+      }
+      nav .nav-links a:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+
+      /* ---------- Layout ---------- */
+      main {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem 3rem;
+      }
+
       section {
-        padding: 5px 20px; /* Internal spacing */
-        margin: -5px; /* Remove default margins */
+        padding: 2.2rem 0 0.4rem;
       }
-      img {
-        width: 220px;
-        height: 220px;
-        border-radius: 14px;
-        object-fit: cover;
-        border: 3px solid #e3e8ee;
-        margin-right: 20px;
-      }
-      h1 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 2em;
-        color: #1f3a5f;
-        margin: 0;
-      }
-      h1 span {
-        font-size: 0.9em;
-        font-weight: normal;
-      }
-      p {
-        margin: 5px 0;
-      }
-      h2 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.4em;
-        color: #1f3a5f;
-        border-bottom: 2px solid #c9d4e0;
-        padding-bottom: 5px;
-        margin-bottom: 12px;
-      }
+
+      h1,
+      h2,
       h3 {
-        font-size: 1em;
-        color: #333333;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--accent);
       }
-      ul {
-        list-style-type: disc;
-        padding-left: 20px;
+
+      h1 {
+        font-size: 2.1rem;
+        margin: 0 0 0.2rem;
+        line-height: 1.2;
       }
-      ul li {
-        margin-bottom: 5px;
+
+      h2 {
+        font-size: 1.45rem;
+        margin: 0 0 1rem;
+        padding-bottom: 0.35rem;
+        border-bottom: 2px solid var(--border);
       }
-      ul {
-        margin: 10px 0;
-        padding-left: 20px;
+
+      p {
+        margin: 0.5rem 0;
       }
-      ul.top-level {
-        list-style-type: none; /* Remove bullets for first-level list */
-        padding-left: 0; /* Align to the left for a clean look */
+
+      a {
+        color: var(--link);
       }
-      ul.top-level > li {
-        margin-bottom: 10px; /* Add space between items */
-      }
-      ul.sub-list {
-        list-style-type: disc; /* Keep bullets for nested lists */
-        padding-left: 20px; /* Indent nested lists */
-      }
-      .code {
-        font-family: "Consolas", monospace; /* Use monospaced font for code */
-        width: 115px; /* Fixed width for alignment */
-        display: inline-block; /* Keeps code in its own block */
-      }
-      .description {
-        flex: 1; /* Take the remaining space */
-      }
+
+      /* ---------- Profile header ---------- */
       .profile {
         display: flex;
         align-items: center;
-        background: #f6f8fa;
+        gap: 2rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
         border-radius: 10px;
-        padding: 25px;
-        margin: 0 15px 15px;
+        padding: 2rem;
+        margin-top: 1.5rem;
       }
-      .abstract {
-        display: none; /* Hidden by default */
-        margin-top: 10px;
-        padding: 10px;
-        background-color: #f9f9e9;
-        border-left: 4px solid #ccc;
+      .profile img {
+        width: 200px;
+        height: 200px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 3px solid #e3e8ee;
+        flex-shrink: 0;
       }
-      .abstract-btn {
-        color: #1f3a5f;
+      .profile .role-line {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--text);
+        margin: 0.2rem 0;
+      }
+      .profile .affiliation {
+        color: var(--muted);
+        margin: 0.15rem 0;
+      }
+      .profile .contact {
+        margin-top: 0.9rem;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+      .profile .contact a {
+        color: var(--link);
         text-decoration: none;
-        cursor: pointer;
       }
-      .abstract-btn:hover {
+      .profile .contact a:hover {
         text-decoration: underline;
       }
-      /* Style for grouped links */
-      .links-group {
-        font-weight: normal;
+      .profile .contact .sep {
+        margin: 0 0.4rem;
+        color: #b0b6bf;
       }
-      .links-group a {
-        color: #1f3a5f; /* Navy color for links */
-        text-decoration: none; /* Remove underline */
+
+      /* ---------- Bio ---------- */
+      .bio {
+        margin-top: 1.6rem;
+        color: var(--text);
+        max-width: 72ch;
       }
-      .links-group a:hover {
-        text-decoration: underline; /* Add underline on hover */
+
+      /* ---------- Lists ---------- */
+      ul {
+        margin: 0.6rem 0;
+        padding-left: 1.3rem;
       }
-      .links-group span {
-        color: black; /* Vertical bar color */
+      ul li {
+        margin-bottom: 0.45rem;
       }
-      /* Remove underline from all hyperlinks */
-      a {
-        text-decoration: none;
-        color: #1f3a5f; /* Optional: Set a custom color */
-      }
-      /* Add an underline on hover for better accessibility */
-      a:hover {
-        text-decoration: underline;
-      }
-      .last-updated {
-        text-align: center;
-        margin-top: 30px;
-        padding-top: 15px;
-        border-top: 1px solid #e3e8ee;
-        font-size: 0.9em;
-        color: gray;
-      }
-      /* Default style: Black text and no underline */
-      .author-link {
-        color: black;
-        text-decoration: none; /* Removes underline */
-        font-weight: normal; /* Avoid unnecessary boldness */
-        cursor: pointer; /* Indicates it's clickable */
-      }
-      /* Hover effect: Change color and add an underline */
-      .author-link:hover {
-        color: #1f3a5f; /* Highlight the text in navy on hover */
-        text-decoration: underline; /* Add underline on hover */
-      }
-      /* Two-column grid for timeline entries */
+
+      /* ---------- Timeline (experience / education) ---------- */
       ul.exp {
         list-style: none;
         margin: 0;
@@ -160,42 +189,143 @@
       }
       ul.exp > li {
         display: grid;
-        grid-template-columns: 7.5rem 1fr; /* Left time column + right content column */
-        column-gap: 0.6rem;
+        grid-template-columns: 8.5rem 1fr;
+        column-gap: 1rem;
         align-items: start;
-        margin: 0.6rem 0;
-        position: relative; /* For the left dot positioning */
-        padding-left: 1.15rem; /* Space for the dot */
-      }
-      ul.exp .role {
+        margin: 0.7rem 0;
         position: relative;
-        line-height: 1.6;
+        padding-left: 1.2rem;
       }
       ul.exp > li::before {
         content: "";
         position: absolute;
-        left: 0.35rem;
-        top: calc(0.8em);
-        width: 0.38rem;
-        height: 0.38rem;
+        left: 0.3rem;
+        top: 0.55em;
+        width: 0.4rem;
+        height: 0.4rem;
         border-radius: 50%;
-        background: #000;
+        background: var(--accent);
         transform: translateY(-50%);
         pointer-events: none;
       }
       ul.exp .time {
         white-space: nowrap;
         font-variant-numeric: tabular-nums;
-        font-weight: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
       }
-      /* Responsive: stack profile on narrow screens */
+      ul.exp .role {
+        line-height: 1.55;
+      }
+      ul.exp .role .org {
+        font-weight: 600;
+      }
+      ul.exp .role .degree {
+        color: var(--muted);
+      }
+
+      /* ---------- Publications ---------- */
+      .pub {
+        margin: 0 0 1.1rem;
+        padding-bottom: 0.9rem;
+        border-bottom: 1px solid #eef1f4;
+      }
+      .pub:last-child {
+        border-bottom: none;
+      }
+      .pub .title {
+        font-weight: 600;
+        margin: 0 0 0.15rem;
+      }
+      .pub .venue {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin: 0 0 0.15rem;
+      }
+      .pub .links-group {
+        font-size: 0.92rem;
+      }
+      .pub .links-group a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      .pub .links-group a:hover {
+        text-decoration: underline;
+      }
+      .pub .links-group .sep {
+        margin: 0 0.35rem;
+        color: #b0b6bf;
+      }
+
+      /* ---------- Abstract ---------- */
+      .abstract {
+        display: none;
+        margin-top: 0.7rem;
+        padding: 0.8rem 1rem;
+        background-color: #f9f9e9;
+        border-left: 4px solid #d8d8b8;
+        font-size: 0.95rem;
+        color: var(--text);
+      }
+      .abstract p {
+        margin: 0;
+      }
+
+      /* ---------- Footer ---------- */
+      footer {
+        border-top: 1px solid var(--border);
+        margin-top: 2.5rem;
+        padding-top: 1.2rem;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* ---------- Responsive ---------- */
       @media (max-width: 700px) {
+        body {
+          font-size: 16px;
+        }
         .profile {
           flex-direction: column;
           align-items: flex-start;
+          gap: 1.2rem;
+          padding: 1.5rem;
         }
-        img {
-          margin-bottom: 10px;
+        .profile img {
+          width: 160px;
+          height: 160px;
+        }
+        ul.exp > li {
+          grid-template-columns: 1fr;
+          gap: 0.15rem;
+        }
+        ul.exp .time {
+          white-space: normal;
+        }
+        nav .nav-inner {
+          padding: 0.6rem 1rem;
+        }
+      }
+
+      /* ---------- Print ---------- */
+      @media print {
+        nav {
+          display: none;
+        }
+        body {
+          font-size: 12pt;
+        }
+        .profile {
+          border: none;
+          background: none;
+          padding: 0;
+        }
+        .abstract {
+          display: none !important;
+        }
+        footer {
+          border-top: none;
         }
       }
     </style>
@@ -203,16 +333,14 @@
     <!-- Show abstract -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Attach event listeners to all buttons with the class 'abstract-btn'
         document.querySelectorAll(".abstract-btn").forEach((button) => {
           button.addEventListener("click", () => {
-            const targetId = button.getAttribute("data-target"); // Get the target ID
-            const abstract = document.getElementById(targetId); // Find the corresponding abstract
-            // Toggle display
+            const targetId = button.getAttribute("data-target");
+            const abstract = document.getElementById(targetId);
             if (abstract.style.display === "none" || abstract.style.display === "") {
-              abstract.style.display = "block"; // Show the abstract
+              abstract.style.display = "block";
             } else {
-              abstract.style.display = "none"; // Hide the abstract
+              abstract.style.display = "none";
             }
           });
         });
@@ -221,68 +349,96 @@
   </head>
 
   <body>
-    <section class="profile">
-      <img src="assets/photo.jpg" alt="Nguyen Luong Gia Bao's Photo" />
-      <div>
-        <h1>Nguyen Luong Gia Bao</h1>
-        <p><strong>Undergraduate Researcher in Financial Technology</strong></p>
-        <p>University of Economics and Law, Vietnam National University</p>
-        <p>Ho Chi Minh City, Vietnam</p>
-        <p>Email: baonlg23414b[at]st.uel.vn</p>
-        <p>Phone: +84 975 400 624</p>
-        <p>
-          <a href="https://github.com/giabao3107" target="_blank">GitHub</a>&nbsp;|&nbsp;
-          <a href="https://www.linkedin.com/in/nlgb3107/" target="_blank">LinkedIn</a>&nbsp;|&nbsp;
-          <a href="assets/Gia-Bao-Nguyen-CV.pdf" target="_blank">CV</a>
-        </p>
+    <nav>
+      <div class="nav-inner">
+        <span class="nav-name">Nguyen Luong Gia Bao</span>
+        <div class="nav-links">
+          <a href="#education">Education</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#experience">Experience</a>
+          <a href="#honors">Honors</a>
+          <a href="#skills">Skills</a>
+        </div>
       </div>
-    </section>
+    </nav>
 
-    <section>
-      <h2>Education</h2>
-      <ul class="exp">
-        <li>
-          <div class="time">2023 — 2027</div>
-          <div class="role">
-            B.Sc. in Financial Technology, University of Economics and Law, Vietnam National
-            University
-          </div>
-        </li>
-      </ul>
-    </section>
+    <main>
+      <section class="profile">
+        <img src="assets/photo.jpg" alt="Nguyen Luong Gia Bao's Photo" />
+        <div>
+          <h1>Nguyen Luong Gia Bao</h1>
+          <p class="role-line">Undergraduate Researcher in Financial Technology</p>
+          <p class="affiliation">University of Economics and Law, Vietnam National University</p>
+          <p class="affiliation">Ho Chi Minh City, Vietnam</p>
+          <p class="contact">
+            <a href="mailto:baonlg23414b@st.uel.edu.vn">baonlg23414b@st.uel.edu.vn</a>
+            <span class="sep">|</span>
+            <a href="https://github.com/giabao3107" target="_blank">GitHub</a>
+            <span class="sep">|</span>
+            <a href="https://www.linkedin.com/in/nlgb3107/" target="_blank">LinkedIn</a>
+            <span class="sep">|</span>
+            <a href="assets/Gia-Bao-Nguyen-CV.pdf" target="_blank">CV</a>
+          </p>
+        </div>
+      </section>
 
-    <section>
-      <h2>Research Interests</h2>
-      <ul>
-        <li>
-          Financial Behavior &amp; Empirical Finance: causal inference, econometric methods, and
-          event-study analysis
-        </li>
-        <li>
-          Financial Engineering &amp; Applied AI: portfolio optimization, risk management, deep
-          learning, reinforcement learning, and graph neural networks
-        </li>
-        <li>
-          Algorithmic Game Theory &amp; Market Design: equilibrium computation in continuous double
-          auctions, mechanism design, and multi-agent learning with realistic market frictions
-        </li>
-      </ul>
-    </section>
+      <section class="bio">
+        <p>
+          I am an undergraduate researcher in Financial Technology at the University of Economics
+          and Law, Vietnam National University. My research interests lie at the intersection of
+          empirical finance, financial engineering, and market design — with a focus on causal
+          inference, portfolio optimization, and machine learning applied to financial markets.
+        </p>
+      </section>
 
-    <section>
-      <h2>Academic Papers</h2>
-      <ul>
-        <li>
-          Impact of Margin Cuts on Stock Returns and Trading Value: Evidence from the Vietnamese
-          Stock Market (with Ha Quoc Hung, Vo Pham Anh Khoa and Ngo Phu Thanh)
-          <br />
-          <strong><em>Journal of Economics and Finance</em></strong
-          >, 2025&nbsp;
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_margin">Abstract</a>
-            <span>|</span>
-            <a href="https://doi.org/10.1007/s12197-026-09773-x" target="_blank">DOI</a>]
-          </span>
+      <section id="education">
+        <h2>Education</h2>
+        <ul class="exp">
+          <li>
+            <div class="time">2023 — 2027</div>
+            <div class="role">
+              <div class="org">University of Economics and Law, Vietnam National University</div>
+              <div class="degree">B.Sc. in Financial Technology</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="research">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>
+            Financial Behavior &amp; Empirical Finance: causal inference, econometric methods, and
+            event-study analysis
+          </li>
+          <li>
+            Financial Engineering &amp; Applied AI: portfolio optimization, risk management, deep
+            learning, reinforcement learning, and graph neural networks
+          </li>
+          <li>
+            Algorithmic Game Theory &amp; Market Design: equilibrium computation in continuous
+            double auctions, mechanism design, and multi-agent learning with realistic market
+            frictions
+          </li>
+        </ul>
+      </section>
+
+      <section id="publications">
+        <h2>Journals</h2>
+        <div class="pub">
+          <p class="title">
+            Impact of Margin Cuts on Stock Returns and Trading Value: Evidence from the Vietnamese
+            Stock Market (with Ha Quoc Hung, Vo Pham Anh Khoa and Ngo Phu Thanh)
+          </p>
+          <p class="venue">
+            <em>Journal of Economics and Finance</em>, 2025
+            <span class="links-group">
+              [<a class="abstract-btn" data-target="abstract_margin">Abstract</a>
+              <span class="sep">|</span>
+              <a href="https://doi.org/10.1007/s12197-026-09773-x" target="_blank">DOI</a>]
+            </span>
+          </p>
           <div id="abstract_margin" class="abstract">
             <p>
               Binding margin constraints can affect asset prices and trading activity, yet their
@@ -298,16 +454,19 @@
               contract after margin cuts and instead remains elevated over an extended horizon.
             </p>
           </div>
-        </li>
-        <li>
-          World Uncertainty and the Marginal Value of Cash: Suggestive Non-linear Evidence from Six
-          ASEAN Technology Markets (with Ngo Phu Thanh)
-          <br />
-          <strong><em>International Journal of Economics and Business Research</em></strong
-          >, accepted, 2026&nbsp;
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_cash">Abstract</a>]
-          </span>
+        </div>
+
+        <div class="pub">
+          <p class="title">
+            World Uncertainty and the Marginal Value of Cash: Suggestive Non-linear Evidence from
+            Six ASEAN Technology Markets (with Ngo Phu Thanh)
+          </p>
+          <p class="venue">
+            <em>International Journal of Economics and Business Research</em>, accepted, 2026
+            <span class="links-group">
+              [<a class="abstract-btn" data-target="abstract_cash">Abstract</a>]
+            </span>
+          </p>
           <div id="abstract_cash" class="abstract">
             <p>
               This paper examines how broad-based uncertainty shapes the value that equity investors
@@ -319,19 +478,21 @@
               with an implied interior turning point within the observed WUI range.
             </p>
           </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </section>
 
-    <section>
-      <h2>Conference Presentations</h2>
-      <ul>
-        <li>
-          Market-Relative Temporal Representations for Cross-Sectional Equity Ranking — The 10th
-          Vietnam International Conference in Finance (VICIF 2026)
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_marketrel">Abstract</a>]
-          </span>
+      <section>
+        <h2>Conferences</h2>
+        <div class="pub">
+          <p class="title">
+            Market-Relative Temporal Representations for Cross-Sectional Equity Ranking — The 10th
+            Vietnam International Conference in Finance (VICIF 2026)
+          </p>
+          <p class="venue">
+            <span class="links-group">
+              [<a class="abstract-btn" data-target="abstract_marketrel">Abstract</a>]
+            </span>
+          </p>
           <div id="abstract_marketrel" class="abstract">
             <p>
               Cross-sectional equity selection depends on the relative ordering of securities, yet
@@ -344,13 +505,18 @@
               relative performance.
             </p>
           </div>
-        </li>
-        <li>
-          World Uncertainty and the Marginal Value of Cash: Suggestive Non-linear Evidence from Six
-          ASEAN Technology Markets — 7th Vietnam Economist Annual Meeting (VEAM 2026)
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_cash_veam">Abstract</a>]
-          </span>
+        </div>
+
+        <div class="pub">
+          <p class="title">
+            World Uncertainty and the Marginal Value of Cash: Suggestive Non-linear Evidence from
+            Six ASEAN Technology Markets — 7th Vietnam Economist Annual Meeting (VEAM 2026)
+          </p>
+          <p class="venue">
+            <span class="links-group">
+              [<a class="abstract-btn" data-target="abstract_cash_veam">Abstract</a>]
+            </span>
+          </p>
           <div id="abstract_cash_veam" class="abstract">
             <p>
               This paper examines how broad-based uncertainty shapes the value that equity investors
@@ -362,14 +528,19 @@
               with an implied interior turning point within the observed WUI range.
             </p>
           </div>
-        </li>
-        <li>
-          State-Dependent Graph Portfolio Optimization using Selective State Space Models and
-          Regime-Adaptive Graph Learning — Conference on Optimization, Modeling, Simulation, and
-          Analytics (COMOSA 2026)
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_graph">Abstract</a>]
-          </span>
+        </div>
+
+        <div class="pub">
+          <p class="title">
+            State-Dependent Graph Portfolio Optimization using Selective State Space Models and
+            Regime-Adaptive Graph Learning — Conference on Optimization, Modeling, Simulation, and
+            Analytics (COMOSA 2026)
+          </p>
+          <p class="venue">
+            <span class="links-group">
+              [<a class="abstract-btn" data-target="abstract_graph">Abstract</a>]
+            </span>
+          </p>
           <div id="abstract_graph" class="abstract">
             <p>
               Deep reinforcement learning portfolio systems on emerging markets are constrained by
@@ -382,14 +553,19 @@
               long-range dependencies.
             </p>
           </div>
-        </li>
-        <li>
-          Financial Characteristics and Sector Context in Classifying Financial Report Fraud:
-          Evidence from Vietnam — The 2nd Global Conference on Sustainability in Economics, Business
-          and Law
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_fraud">Abstract</a>]
-          </span>
+        </div>
+
+        <div class="pub">
+          <p class="title">
+            Financial Characteristics and Sector Context in Classifying Financial Report Fraud:
+            Evidence from Vietnam — The 2nd Global Conference on Sustainability in Economics,
+            Business and Law
+          </p>
+          <p class="venue">
+            <span class="links-group">
+              [<a class="abstract-btn" data-target="abstract_fraud">Abstract</a>]
+            </span>
+          </p>
           <div id="abstract_fraud" class="abstract">
             <p>
               This study examines where the predictive signal truly resides for classifying
@@ -403,13 +579,18 @@
               comparisons.
             </p>
           </div>
-        </li>
-        <li>
-          Causality Analysis of Economic Policy Uncertainty and Volatility in Clean Energy Stock
-          Indexes — University of Economics and Law Student Research Award
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_causality">Abstract</a>]
-          </span>
+        </div>
+
+        <div class="pub">
+          <p class="title">
+            Causality Analysis of Economic Policy Uncertainty and Volatility in Clean Energy Stock
+            Indexes — University of Economics and Law Student Research Award
+          </p>
+          <p class="venue">
+            <span class="links-group">
+              [<a class="abstract-btn" data-target="abstract_causality">Abstract</a>]
+            </span>
+          </p>
           <div id="abstract_causality" class="abstract">
             <p>
               This study investigates the causal relationship between economic policy uncertainty
@@ -422,13 +603,18 @@
               causality from U.S. EPU to all three clean energy indexes.
             </p>
           </div>
-        </li>
-        <li>
-          A Multi-Layer Machine Learning and Reinforcement Learning Framework for Portfolio
-          Optimization in VN-100 — University of Economics and Law Student Research Award
-          <span class="links-group">
-            [<a class="abstract-btn" data-target="abstract_multilayer">Abstract</a>]
-          </span>
+        </div>
+
+        <div class="pub">
+          <p class="title">
+            A Multi-Layer Machine Learning and Reinforcement Learning Framework for Portfolio
+            Optimization in VN-100 — University of Economics and Law Student Research Award
+          </p>
+          <p class="venue">
+            <span class="links-group">
+              [<a class="abstract-btn" data-target="abstract_multilayer">Abstract</a>]
+            </span>
+          </p>
           <div id="abstract_multilayer" class="abstract">
             <p>
               This study proposes a structured multi-layer machine learning–reinforcement learning
@@ -442,79 +628,78 @@
               exhibiting stronger predictive performance than low-volatility and low-beta features.
             </p>
           </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </section>
 
-    <section>
-      <h2>Research Experience</h2>
-      <ul class="exp">
-        <li>
-          <div class="time">2026 — present</div>
-          <div class="role">Researcher, 51Labs (research hub of Miquant)</div>
-        </li>
-        <li>
-          <div class="time">Jan — Jun 2027</div>
-          <div class="role">
-            Research Intern (accepted), Economics and Computing Laboratory, National Yang Ming Chiao
-            Tung University
-          </div>
-        </li>
-      </ul>
-    </section>
+      <section id="experience">
+        <h2>Research Experience</h2>
+        <ul class="exp">
+          <li>
+            <div class="time">2026 — present</div>
+            <div class="role">Researcher, 51Labs (research hub of Miquant)</div>
+          </li>
+          <li>
+            <div class="time">Jan — Jun 2027</div>
+            <div class="role">
+              Research Intern (accepted), Economics and Computing Laboratory, National Yang Ming
+              Chiao Tung University
+            </div>
+          </li>
+        </ul>
 
-    <section>
-      <h2>Industry Experience</h2>
-      <ul class="exp">
-        <li>
-          <div class="time">2025 — present</div>
-          <div class="role">Quantitative Research Analyst, Miquant</div>
-        </li>
-        <li>
-          <div class="time">Aug — Oct 2025</div>
-          <div class="role">Data Analyst, Lumination</div>
-        </li>
-        <li>
-          <div class="time">Feb — May 2025</div>
-          <div class="role">Risk Consultant, Vikki Digital Bank</div>
-        </li>
-      </ul>
-    </section>
+        <h2>Industry Experience</h2>
+        <ul class="exp">
+          <li>
+            <div class="time">2025 — present</div>
+            <div class="role">Quantitative Research Analyst, Miquant</div>
+          </li>
+          <li>
+            <div class="time">Aug — Oct 2025</div>
+            <div class="role">Data Analyst, Lumination</div>
+          </li>
+          <li>
+            <div class="time">Feb — May 2025</div>
+            <div class="role">Risk Consultant, Vikki Digital Bank</div>
+          </li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Honors</h2>
-      <ul>
-        <li>Honorable Mention in Scientific Research, University of Economics and Law, 2026</li>
-        <li>Gold Level, WorldQuant BRAIN, 2025</li>
-        <li>Top 10, Data Science Competition, 2025</li>
-        <li>
-          Student of 5 Merits, Faculty of Finance and Banking, University of Economics and Law, 2024
-        </li>
-        <li>Top 12, Business Intelligence Competition Season 8, 2024</li>
-        <li>Top 9, SAP ERPSIM Student Competition, 2024</li>
-      </ul>
-    </section>
+      <section id="honors">
+        <h2>Honors</h2>
+        <ul>
+          <li>Honorable Mention in Scientific Research, University of Economics and Law, 2026</li>
+          <li>Gold Level, WorldQuant BRAIN, 2025</li>
+          <li>Top 10, Data Science Competition, 2025</li>
+          <li>
+            Student of 5 Merits, Faculty of Finance and Banking, University of Economics and Law,
+            2024
+          </li>
+          <li>Top 12, Business Intelligence Competition Season 8, 2024</li>
+          <li>Top 9, SAP ERPSIM Student Competition, 2024</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Programming:</strong> Python, R, SQL, MATLAB, LaTeX</li>
-        <li>
-          <strong>Machine Learning &amp; AI:</strong> Deep Learning, Time Series Modeling,
-          Reinforcement Learning, Natural Language Processing
-        </li>
-        <li>
-          <strong>Quantitative Finance:</strong> Portfolio Optimization, Risk Modeling, Market
-          Microstructure, Financial Modeling
-        </li>
-        <li>
-          <strong>Tools:</strong> PyTorch, TensorFlow, Pandas, NumPy, Jupyter Notebook, Git, VBA,
-          Bloomberg Terminal
-        </li>
-        <li><strong>Languages:</strong> Vietnamese (native), English</li>
-      </ul>
-    </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li><strong>Programming:</strong> Python, R, SQL, MATLAB, LaTeX</li>
+          <li>
+            <strong>Machine Learning &amp; AI:</strong> Deep Learning, Time Series Modeling,
+            Reinforcement Learning, Natural Language Processing
+          </li>
+          <li>
+            <strong>Quantitative Finance:</strong> Portfolio Optimization, Risk Modeling, Market
+            Microstructure, Financial Modeling
+          </li>
+          <li>
+            <strong>Tools:</strong> PyTorch, TensorFlow, Pandas, NumPy, Jupyter Notebook, Git, VBA,
+            Bloomberg Terminal
+          </li>
+          <li><strong>Languages:</strong> Vietnamese (native), English</li>
+        </ul>
+      </section>
 
-    <div class="last-updated">© 2026 Nguyen Luong Gia Bao.&nbsp; Last Updated: September 2026</div>
+      <footer>© 2026 Nguyen Luong Gia Bao.&nbsp; Last Updated: September 2026</footer>
+    </main>
   </body>
 </html>
